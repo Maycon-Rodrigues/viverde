@@ -1,24 +1,48 @@
-# README
+# VIVERDE
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a system dedicated to the management of business, customers, processes and schedules.
 
-Things you may want to cover:
 
-* Ruby version
+### Download the application code
 
-* System dependencies
+First clone the repository
 
-* Configuration
+###### SSH
 
-* Database creation
+```
+git clone git@github.com:Maycon-Rodrigues/viverde.git
+```
 
-* Database initialization
+###### HTTP
 
-* How to run the test suite
+```
+git clone https://github.com/Maycon-Rodrigues/viverde.git
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+### Ruby on Rails
 
-* Deployment instructions
+This application runs on
 
-* ...
+- Ruby 2.3.x
+- Rails 5.0.2
+- SQlite3
+
+### Install the gems
+
+```
+cd viverde
+bundle install
+```
+
+### Create the Database
+```
+rake db:migrate
+```
+
+### Start the Rails server
+
+```
+rails s
+```
+
+Open http://localhost:3000 on your web browser.
