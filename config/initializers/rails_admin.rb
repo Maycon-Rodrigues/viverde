@@ -1,5 +1,7 @@
 RailsAdmin.config do |config|
 
+  config.main_app_name = ['Clinica Viverde', '']
+
   ### Popular gems integration
 
   ## == Devise ==
