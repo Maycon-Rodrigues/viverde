@@ -1,6 +1,6 @@
 RailsAdmin.config do |config|
 
-  config.main_app_name = ['Clinica Viverde', '']
+  config.main_app_name = ['Clínica Viverde', '']
 
   ### Popular gems integration
 
@@ -24,6 +24,84 @@ RailsAdmin.config do |config|
   ## == Gravatar integration ==
   ## To disable Gravatar integration in Navigation Bar set to false
   # config.show_gravatar true
+
+## == Modo de Visualização do Dashboard == 
+# Cliente
+config.model Client do
+  navigation_icon 'icon-book'
+  
+  create do
+    field :name, :string do
+      required true
+    end
+    field :document, :integer do
+      required true
+    end
+    field :email
+    field :phone
+    field :notes
+    field :status do
+      required true
+    end
+  end
+
+  edit do
+    field :name
+    field :document
+    field :email
+    field :phone
+    field :notes
+    field :status
+  end
+
+  list do
+    field :name
+    field :document
+    field :email
+    field :phone
+    field :notes
+    field :status
+  end
+
+end
+
+# Serviço
+config.model Service do
+  navigation_icon 'icon-wrench'
+  
+  create do
+    field :name
+  end
+  
+  list do 
+    field :nome
+  end
+  
+end
+
+# Agenda
+config.model Schedule do
+  navigation_icon 'icon-calendar'
+  
+  list do
+    exclude_fields :created_at, :updated_at, :id
+  end
+  
+end
+
+# Usuario
+config.model User do
+  navigation_icon 'icon-user'
+  
+  create do
+    exclude_fields :current_sign_in_at, :last_sign_in_at, :current_sign_in_ip, :last_sign_in_ip, :sign_in_count, :remember_created_at
+  end
+  
+  edit do
+    exclude_fields :current_sign_in_at, :last_sign_in_at, :current_sign_in_ip, :last_sign_in_ip, :sign_in_count, :remember_created_at
+  end
+  
+end
 
   config.actions do
     dashboard                     # mandatory
